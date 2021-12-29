@@ -3,3 +3,4 @@
 .sdkmanrc
 .settings/
 target/
+.idea/
