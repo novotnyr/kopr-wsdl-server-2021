@@ -1,19 +1,17 @@
 package sk.upjs.ics.kopr;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.example.parking.ParkingPortType;
+import org.example.parking.ParkingRequest;
+import org.example.parking.ParkingTicket;
 
 import javax.jws.WebService;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Endpoint;
-
-import org.example.parking.ParkingPortType;
-import org.example.parking.ParkingRequest;
-import org.example.parking.ParkingTicket;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 @WebService
 public class ParkingServiceImpl implements ParkingPortType {
@@ -26,12 +24,12 @@ public class ParkingServiceImpl implements ParkingPortType {
 		List<Source> metadata = new ArrayList<Source>();
 		
 		var wsdlSource = new StreamSource(ParkingServiceImpl.class.getResourceAsStream("/parking.wsdl"));
-		wsdlSource.setSystemId("http://www.example.org/parking.wsdl");
+		wsdlSource.setSystemId("http://www.example.org/parking/parking.wsdl");
 		metadata.add(wsdlSource);
 
 		
 		var xsdSource = new StreamSource(ParkingServiceImpl.class.getResourceAsStream("/parking.xsd"));
-		xsdSource.setSystemId("http://www.example.org/parking.xsd");
+		xsdSource.setSystemId("http://www.example.org/parking/parking.xsd");
 		metadata.add(xsdSource);
 		
 		
