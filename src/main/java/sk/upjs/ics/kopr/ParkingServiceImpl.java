@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@WebService
+@WebService(endpointInterface = "org.example.parking.ParkingPortType")
 public class ParkingServiceImpl implements ParkingPortType {
 
 	public ParkingTicket getTicket(ParkingRequest part) {
